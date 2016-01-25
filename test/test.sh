@@ -3,9 +3,9 @@
 
 # These variables correspond to the inputs and parameter ids from the apps.json file. 
 # The API will pass the actual values into this script prior to execution.
-INPUT1=~/lus/input1.fastq
-INPUT2=~/lus/input2.fastq
-PREFIX="test_sample-"
+INPUT1=~/lus/input1.fastqaa
+INPUT2=~/lus/input2.fastqaa
+PREFIX="test_sample "
 
 # Conditional create an input/output directory in the local scratch folder
 if [ ! -d input ]; then mkdir input; fi
@@ -31,7 +31,7 @@ if [ -e input/$FILENAME1 ]; then
 	if [ -e input/$FILENAME2 ]; then
 		source ~/.bash_profile
 
-	    make -j 6 -f /lus/scratch/software/opt/moleculardb/makefiles/Makefile.uhhpc.mira SAMPLE_NAME=$PREFIX R1_FASTQ=$FILENAME1 R2_FASTQ=$FILENAME2 RESUME_MIRA=-r all
+	    make -j 6 -f /lus/scratch/software/delong-metagenome/opt/moleculardb/makefiles/Makefile.uhhpc.mira SAMPLE_NAME=$PREFIX R1_FASTQ=input/$FILENAME1 R2_FASTQ=input/$FILENAME2 RESUME_MIRA=-r all
 
 	fi
 
