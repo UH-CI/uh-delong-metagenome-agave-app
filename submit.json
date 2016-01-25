@@ -1,0 +1,36 @@
+{
+  "name":"uh-delong-metagenome test-1452899721",
+  "appId": "uh-delong-metagenome-0.1",
+  "batchQueue": "sb.q",
+  "executionSystem": "execute.uhhpc1.its.hawaii.edu",
+  "maxRunTime": "03:00:00",
+  "memoryPerNode": "128GB",
+  "nodeCount": 1,
+  "processorsPerNode": 1,
+  "archive": true,
+  "archiveSystem": "sftp.lustre.storage.uhhpc1.its.hawaii.edu",
+  "archivePath": null,
+  "inputs": {
+    "input1": "agave://sftp.lustre.storage.uhhpc1.its.hawaii.edu/input1.fastq",
+    "input2": "agave://sftp.lustre.storage.uhhpc1.its.hawaii.edu/input2.fastq"
+  },
+  "parameters": {
+  },
+  "notifications": [
+    {
+      "url":"http://requestbin.agaveapi.co/11jcjnt1?job_id=${JOB_ID}&status=${JOB_STATUS}",
+      "event":"*",
+      "persistent":true
+    },
+    {
+      "url":"seanbc@hawaii.edu",
+      "event":"FINISHED",
+      "persistent":false
+    },
+    {
+      "url":"seanbc@hawaii.edu",
+      "event":"FAILED",
+      "persistent":false
+    }
+  ]
+}

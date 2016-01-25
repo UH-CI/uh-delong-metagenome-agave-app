@@ -1,0 +1,72 @@
+{
+  "name": "uh-delong-metagenome",
+  "parallelism": "PTHREAD",
+  "version": "0.1",
+  "label": "Delong Lab Metagenome Workflow at UH",
+  "shortDescription": "Delong Lab Metagenome Workflow at UH",
+  "longDescription": "Delong Lab Metagenome Workflow processes ",
+  "deploymentPath": "/lus/scratch/software/delong/delong-metagenome-0.1",
+  "deploymentSystem": "sftp.lustre.storage.uhhpc1.its.hawaii.edu",
+  "executionSystem": "execute.uhhpc1.its.hawaii.edu",
+  "executionType": "CLI",
+  "templatePath": "wrapper.sh",
+  "testPath": "test/test.sh",
+  "tags": [
+    "demo"
+  ],
+  "ontology": [
+  ],
+  "inputs": [
+    {
+      "id": "input1",
+      "details": {
+        "label": "Input file",
+        "description": "FASTQ file"
+      },
+       "semantics":{
+         "ontology":[],
+         "minCardinality":1,
+         "fileTypes":[
+         "TEXT-0"
+        ]
+        },
+         "value": {
+          "default": "agave://sftp.lustre.storage.uhhpc1.its.hawaii.edu/input1.fastq",
+          "required": true,
+          "visible": true,
+          "validator": null
+         }
+    },
+    {
+      "id": "input2",
+      "details": {
+        "label": "Input file",
+        "description": "FASTQ file"
+      },
+        "semantics":{
+         "ontology":[],
+         "minCardinality":1,
+         "fileTypes":[
+         "TEXT-0"
+        ]
+        },
+         "value": {
+          "default": "agave://sftp.lustre.storage.uhhpc1.its.hawaii.edu/input2.fastq",
+          "required": true,
+          "visible": true,
+          "validator": null
+         }
+
+    },
+    {
+      "id": "output_prefix",
+      "details": {
+        "label": "Output prefix",
+        "description": "Prefix name for output files"
+      },
+    }
+  ],
+  "parameters": [
+    
+  ]
+}

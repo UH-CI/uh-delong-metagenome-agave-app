@@ -1,0 +1,85 @@
+{
+  "id": "execute.uhhpc1.its.hawaii.edu",
+  "name": "UH ITS HPC SSH Execution Host",
+  "status": "UP",
+  "type": "EXECUTION",
+  "description": "Execution system using ssh to submit jobs to the UH ITS HPC.",
+  "site": "hawaii.edu/its/ci",
+  "revision": 1,
+  "public": false,
+  "executionType": "HPC",
+  "scheduler": "SLURM",
+  "environment": null,
+  "startupScript": "./bashrc",
+  "maxSystemJobsPerUser": 10,
+  "workDir": "/home/APIUSERNAME",
+  "scratchDir": "/lus/scratch/APIUSERNAME",
+  "queues": [
+    {
+      "name": "community.q",
+      "maxJobs": 100,
+      "maxUserJobs": 10,
+      "maxNodes": 20,
+      "maxMemoryPerNode": "128GB",
+      "maxProcessorsPerNode": 20,
+      "maxRequestedTime": "72:00:00",
+      "customDirectives": null,
+      "default": true
+    },
+    {
+      "name": "exclusive.q",
+      "maxJobs": 100,
+      "maxUserJobs": 10,
+      "maxNodes": 20,
+      "maxMemoryPerNode": "128GB",
+      "maxProcessorsPerNode": 20,
+      "maxRequestedTime": "72:00:00",
+      "customDirectives": null,
+      "default": false
+    },
+    {
+      "name": "lm.q",
+      "maxJobs": 25,
+      "maxUserJobs": 5,
+      "maxNodes": 1,
+      "maxMemoryPerNode": "1TB",
+      "maxProcessorsPerNode": 40,
+      "maxRequestedTime": "72:00:00",
+      "customDirectives": null,
+      "default": false
+    },
+    {
+      "name": "sb.q",
+      "maxJobs": 25,
+      "maxUserJobs": 5,
+      "maxNodes": 1,
+      "maxMemoryPerNode": "128GB",
+      "maxProcessorsPerNode": 20,
+      "maxRequestedTime": "00:01:00",
+      "customDirectives": null,
+      "default": false
+    }
+  ],
+  "login": {
+    "host": "uhhpc1.its.hawaii.edu",
+    "port": 22,
+    "protocol": "SSH",
+    "auth": {
+      "username": "APIUSERNAME",
+      "password": "APIUSERPASSWORD",
+      "type": "PASSWORD" 
+    }
+  },
+  "storage": {
+    "host": "uhhpc1.its.hawaii.edu",
+    "port": 22,
+    "protocol": "SFTP",
+    "rootDir": "/",
+    "homeDir": "/home/APIUSERNAME",
+    "auth": {
+      "username": "APIUSERNAME",
+      "password": "APIUSERPASSWORD",
+      "type": "PASSWORD" 
+    }
+  }
+}
