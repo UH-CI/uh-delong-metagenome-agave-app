@@ -30,11 +30,8 @@ FILENAME2=${INPUT2##*/}
 if [ -e input/$FILENAME1 ]; then
 	if [ -e input/$FILENAME2 ]; then
 		source ~/.bash_profile
-		
-		mafft --auto input/$FILENAME > output/mafft-app_output.fasta
-		make -j 6 -f /home/jmeppley/apps/opt/moleculardb/makefiles/Makefile.uhhpc.mira SAMPLE_NAME=S32C001aa R1_FASTQ=CSHLIID00-20a-S32C001-0015_S9_R1_001.fastqaa R2_FASTQ=CSHLIID00-20a-S32C001-0015_S9_R2_001.fastqaa RESUME_MIRA=-r all
 
-	    make -j 6 -f /lus/scratch/software/opt/moleculardb/makefiles/Makefile.uhhpc.mira SAMPLE_NAME=S32C001aa R1_FASTQ=CSHLIID00-20a-S32C001-0015_S9_R1_001.fastqaa R2_FASTQ=CSHLIID00-20a-S32C001-0015_S9_R2_001.fastqaa RESUME_MIRA=-r all
+	    make -j 6 -f /lus/scratch/software/opt/moleculardb/makefiles/Makefile.uhhpc.mira SAMPLE_NAME=$PREFIX R1_FASTQ=$FILENAME1 R2_FASTQ=$FILENAME2 RESUME_MIRA=-r all
 
 	fi
 
