@@ -39,7 +39,7 @@ For the UH HPC Sandbox partition execution system:
 Now we need to move the AGAVE application file to the UH HPC.
 
 First create the apps directory on your Lustre scratch space:
->files-mkdir -N apps/uh-mafft-7.245 -S sftp.lustre.storage.uhhpc1.its.hawaii.edu
+>files-mkdir -N apps/delong-metagenome-0.1 -S sftp.lustre.storage.uhhpc1.its.hawaii.edu
 
 Move the wrapper.sh file to Lustre:
 >files-upload -F wrapper.sh -S sftp.lustre.storage.uhhpc1.its.hawaii.edu apps/delong-metagenome-0.1
