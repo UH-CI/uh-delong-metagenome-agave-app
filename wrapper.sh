@@ -31,7 +31,7 @@ if [ -e input/$FILENAME1 ]; then
 	if [ -e input/$FILENAME2 ]; then
 		source ~/.bash_profile
 
-	    make -j 6 -f /lus/scratch/software/opt/moleculardb/makefiles/Makefile.uhhpc.mira SAMPLE_NAME=$PREFIX R1_FASTQ=$FILENAME1 R2_FASTQ=$FILENAME2 RESUME_MIRA=-r all
+   		make -j 6 -f /lus/scratch/software/delong-metagenome/opt/moleculardb/makefiles/Makefile.uhhpc.mira SAMPLE_NAME=$PREFIX R1_FASTQ=input/$FILENAME1 R2_FASTQ=input/$FILENAME2 RESUME_MIRA=-r all
 
 	fi
 
